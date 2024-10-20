@@ -1,0 +1,85 @@
+- !<ObjectPrefab/17cffc88-8a1f-41ec-b163-4501d649b505>
+  PackagePath: ""
+  objects:
+    - !<own> 6ee38faf-cec9-4c19-9b30-567417ba372c
+  LazyLoading: false
+  RetainAssets: true
+- !<ScriptComponent/4c43cd48-66d2-4586-957a-eda2bd1744e7>
+  PrefabRemaps:
+    []
+  Name: Interactable
+  Enabled: true
+  ScriptAsset: !<reference> ff2ad54d-0821-45bd-a4c4-fb746d561b9a
+  ScriptInputsDefault:
+    targetingMode: true
+    enableInstantDrag: true
+    allowMultipleInteractors: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      targetingMode: !<float> 3.000000
+      enableInstantDrag: false
+      allowMultipleInteractors: true
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/6ee38faf-cec9-4c19-9b30-567417ba372c>
+  PrefabRemaps:
+    []
+  Name: container-button
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: -1.935684, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b097ea6f-207d-4fb3-8bdf-5dbc9247b46a
+    - !<own> 4c43cd48-66d2-4586-957a-eda2bd1744e7
+    - !<own> ec0ea21d-2e64-42b9-b9c3-3ea8c31d3260
+- !<RenderMeshVisual/b097ea6f-207d-4fb3-8bdf-5dbc9247b46a>
+  PrefabRemaps:
+    []
+  Name: component_6
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> aa2a0961-7936-4a38-9ea6-db630590b60d
+  Mesh: !<reference> 8a346e93-f28c-4adb-bb7e-0d18b29a0f37
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: true
+  BlendShapes:
+    Pinch: 0.000000
+    Z depth: 1.000000
+- !<ScriptComponent/ec0ea21d-2e64-42b9-b9c3-3ea8c31d3260>
+  PrefabRemaps:
+    []
+  Name: PinchButton
+  Enabled: true
+  ScriptAsset: !<reference> 8df5a4e3-6610-48c1-b9fc-369bbf57ce96
+  ScriptInputsDefault:
+    editEventCallbacks: true
+    customFunctionForOnButtonPinched: true
+    onButtonPinchedFunctionNames: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      editEventCallbacks: false
+      customFunctionForOnButtonPinched: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      onButtonPinchedFunctionNames: !<string[]>
+        []
+  ScriptTypes:
+    "":
+      {}
