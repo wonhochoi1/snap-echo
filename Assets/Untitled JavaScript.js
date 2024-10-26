@@ -13,22 +13,17 @@ var lastUtterance = "";
 var updateEvent = script.createEvent('UpdateEvent');
 
 // HTTP Request Part
-
-// @input Asset.RemoteServiceModule remoteServiceModule
 /** @type {RemoteServiceModule} */
 var remoteServiceModule = script.remoteServiceModule;
 
-// Interval in milliseconds (30 seconds)
 var intervalDuration = 3000;
 
-// Function to send HTTP request to Flask server
+
 function sendRequest() {
     var httpRequest = RemoteServiceHttpRequest.create();
 
-    // Update the URL to point to your Flask server
-    httpRequest.url = 'https://snaptranscription-dacbce1f45d3.herokuapp.com/getData';
+    httpRequest.url = '';   //address to flask
 
-    // Set your Flask endpoint
     httpRequest.method = RemoteServiceHttpRequest.HttpRequestMethod.Get;
 
     //print('Sending request!');
@@ -41,10 +36,9 @@ function sendRequest() {
         var responseBody = response.body;
         print('Body: ' + responseBody);
 
-        // Parse the body as JSON to extract utterances
         var utterancesArray = JSON.parse(responseBody);
 
-        // Display only the last utterance
+   
         if (utterancesArray.length > 0) {
             lastUtterance = utterancesArray[utterancesArray.length - 1].utterance;
 
@@ -60,9 +54,8 @@ function sendRequest() {
     });
 }
 
-// Function to handle time-based execution
+
 function onUpdateEvent(eventData) {
-    // Send the request on every updateEvent trigger
     sendRequest();
 }
 
@@ -189,7 +182,7 @@ function sendToGoogleGemini(utterance) {
     var geminiRequest = RemoteServiceHttpRequest.create();
     
     // Google Gemini API endpoint (make sure this is correct)
-    geminiRequest.url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyA_MV25oMNBn3zmRZFQ56WnYMsJdjPQGuU';  // Replace with actual URL and key
+    geminiRequest.url = '';  // Replace with actual URL and key
     geminiRequest.method = RemoteServiceHttpRequest.HttpRequestMethod.Post;
 
     // Set request body

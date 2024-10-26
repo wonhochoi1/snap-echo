@@ -4,10 +4,10 @@ from pymongo import MongoClient
 app = Flask(__name__)
 
 # MongoDB connection
-client = MongoClient('mongodb+srv://ishansheth31:Kevi5han1234@textstorage.saw2kxe.mongodb.net/textstorage?retryWrites=true&w=majority&tls=true')
+client = MongoClient('')
 # client = MongoClient('mongodb+srv://your_mongo_uri')
-db = client['textstorage']  # Replace with your DB name
-collection = db['test1']  # Collection name
+db = client['textstorage']  
+collection = db['test1']  
 
 @app.route('/getData', methods=['GET'])
 def get_data():

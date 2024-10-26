@@ -5,7 +5,7 @@ var remoteServiceModule = script.remoteServiceModule;
 var httpRequest = RemoteServiceHttpRequest.create();
 
 // Update the URL to point to your Flask server
-httpRequest.url = 'http://127.0.0.1:5000/getData';  // Set your Flask endpoint
+httpRequest.url = 'http://localhost:5000/getData';  
 httpRequest.method = RemoteServiceHttpRequest.HttpRequestMethod.Get;
 
 print('Sending request!');

@@ -13,17 +13,17 @@ from pymongo import MongoClient
 
 load_dotenv()
 
-# MongoDB connection
-MONGO_KEY = "mongodb+srv://ishansheth31:Kevi5han1234@textstorage.saw2kxe.mongodb.net/"
+
+MONGO_KEY = ""      #insert Mongo Key
 client = MongoClient(MONGO_KEY)
-db = client['textstorage']  # Replace with your actual DB name
-collection = db['test1']  # Collection where utterances will be stored
+db = client['textstorage']  
+collection = db['test1']  
 
 is_finals = []
 
 def main():
     try:
-        API_KEY = "7d3c88e5c2d1ed6533d6bfa4123ac2adc1c8f200"
+        API_KEY = ""    
         deepgram: DeepgramClient = DeepgramClient(API_KEY)
 
         dg_connection = deepgram.listen.live.v("1")
@@ -42,12 +42,10 @@ def main():
 
                 if result.speech_final:
                     utterance = " ".join(is_finals)
-                    print(f"Speech Final: {utterance}")
+                    print(f"Speech Final: {utterance}")      
                     
-                    # Insert utterance into MongoDB
                     collection.insert_one({"utterance": utterance})
 
-                    # Clear the finals list
                     is_finals = []
                 else:
                     print(f"Is Final: {sentence}")
